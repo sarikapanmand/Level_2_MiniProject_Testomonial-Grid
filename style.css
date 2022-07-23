@@ -1,0 +1,126 @@
+:root {
+  --violet: hsl(263, 55%, 52%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --white: hsl(0, 0%, 100%);
+  --gray: hsl(0, 0%, 81%);
+  --light-gray: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-gray);
+  font-size: 13px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 1rem;
+  color: var(--dark-grayish-blue);
+  padding: 1rem;
+}
+
+/* .card.card__primary > .card__header {
+  background: url('../images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+} */
+
+.card.card__primary {
+  background-color: var(--violet);
+  background-image: url('../images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: 88% 0%;
+  color: var(--light-gray);
+}
+
+.card.card__gray {
+  background-color: var(--dark-grayish-blue);
+  color: var(--light-gray);
+}
+
+.card.card__dark {
+  background-color: var(--dark-blue);
+  color: var(--light-gray);
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+}
+
+.card__header--image > img {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 2px solid var(--gray);
+  border-radius: 50%;
+}
+
+.card.card__primary .card__header--image > img {
+  border: 2px solid var(--gray);
+}
+
+.card.card__dark .card__header--image > img {
+  border: 2px solid var(--violet);
+}
+
+.card__header--info {
+  margin-left: 1rem;
+}
+
+.card__header--info > p {
+  opacity: 0.5;
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+
+.card__body p {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  padding-top: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .card__primary {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .card__light {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .card__dark {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  .card__long {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+}
